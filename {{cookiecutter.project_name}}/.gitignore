@@ -1,0 +1,3 @@
+{{cookiecutter.project_name}}/static/.webassets-cache
+{{cookiecutter.project_name}}/static/dist
+node_modules
