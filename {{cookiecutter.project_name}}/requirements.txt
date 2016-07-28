@@ -1,0 +1,10 @@
+Flask==0.11.1
+# Waiting on next release for a fix for libsass
+-e git+https://github.com/miracle2k/flask-assets@36da5c90cf99293ac632cfab58db52cab1c8cc83#egg=flask_assets
+Flask-Migrate==1.8.1
+Flask-Script==2.0.5
+Flask-Security==1.7.5
+Flask-SQLAlchemy==2.1
+libsass==0.9.3
+psycopg2==2.6.2
+webassets-browserify==1.1.0

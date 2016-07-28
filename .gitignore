@@ -1,0 +1,3 @@
+aws_reboot/static/.webassets-cache
+aws_reboot/static/dist
+node_modules

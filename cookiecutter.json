@@ -1,0 +1,7 @@
+{
+  "project_name": "flask_app",
+  "database_uri": "postgresql://localhost/{{cookiecutter.project_name}}",
+  "_copy_without_render": [
+    "*.jinja"
+  ]
+}

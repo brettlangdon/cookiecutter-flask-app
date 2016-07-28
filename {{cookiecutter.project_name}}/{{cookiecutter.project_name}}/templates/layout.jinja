@@ -1,0 +1,47 @@
+{% from "_macros.jinja" import render_link_for %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% assets "css_all" %}
+      <link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}" />
+    {% endassets %}
+  </head>
+  <body>
+    <nav class="nav has-shadow">
+      <div class="container is-fluid">
+        <div class="nav-left">
+          <a class="nav-item" href="{{ url_for('root_index') }}">
+            <h1>Flask app</h1>
+          </a>
+        </div>
+        <div class="nav-right nav-menu">
+          {% if current_user.is_authenticated %}
+            <div class="nav-item">
+              <a class="button nav-item" href="{{ url_for_security('logout') }}">Logout</a>
+            </div>
+          {% else %}
+            <div class="nav-item">
+              <a class="button is-primary" href="{{ url_for_security('login') }}">Login</a>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </nav>
+    <section class="section">
+      <div class="container is-fluid">
+        {% block content %}{% endblock %}
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="container is-fluid">
+        <h2>Footer</h2>
+      </div>
+    </div>
+    {% assets "js_all" %}
+      <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+    {% endassets %}
+  </body>
+</html>

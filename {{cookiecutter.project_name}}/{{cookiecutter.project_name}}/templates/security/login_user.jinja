@@ -1,0 +1,19 @@
+{% extends "layout.jinja" %}
+
+{% from "_macros.jinja" import render_field_with_errors, render_field %}
+
+{% block content %}
+<div class="content">
+  <h1>Login</h1>
+  {% include "_messages.jinja" %}
+  <form action="{{ url_for_security('login') }}" method="POST" name="login_user_form">
+    {{ login_user_form.hidden_tag() }}
+    {{ render_field_with_errors(login_user_form.email) }}
+    {{ render_field_with_errors(login_user_form.password) }}
+    {{ render_field_with_errors(login_user_form.remember, class="checkbox") }}
+    {{ render_field(login_user_form.next) }}
+    {{ render_field(login_user_form.submit, class="button is-primary") }}
+  </form>
+  {% include "security/_menu.html" %}
+</div>
+{% endblock %}

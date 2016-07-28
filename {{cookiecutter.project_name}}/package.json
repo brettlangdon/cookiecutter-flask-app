@@ -1,0 +1,8 @@
+{
+  "name": "{{cookiecutter.project_name}}",
+  "private": true,
+  "dependencies": {
+    "browserify": "^13.1.0",
+    "bulma": "^0.1.0"
+  }
+}

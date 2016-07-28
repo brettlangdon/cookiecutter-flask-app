@@ -1,0 +1,30 @@
+{% macro render_link_for(view_name, inner_text, class="") %}
+  {% set url = url_for(view_name) %}
+  {% if request.endpoint == view_name %}
+    {% set class = class + " is-active" %}
+  {% endif %}
+  <a href="{{ url }}" class="{{ class }}">{{ inner_text }}</a>
+{% endmacro %}
+
+{% macro render_field_with_errors(field, class="input") %}
+  <p class="control">
+    {{ field.label(class="label") }}
+
+    {% if field.errors %}
+      {% set class = class + " is-danger" %}
+    {% endif %}
+    {{ field(class=class, **kwargs)|safe }}
+
+    {% if field.errors %}
+      {% for error in field.errors %}
+        <span class="help is-danger">{{ error }}</span>
+      {% endfor %}
+    {% endif %}
+  </p>
+{% endmacro %}
+
+{% macro render_field(field) %}
+  <p class="control">
+    {{ field(**kwargs)|safe }}
+  </p>
+{% endmacro %}
