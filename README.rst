@@ -22,5 +22,18 @@ To create a new starting project:
 
 .. code-block:: bash
 
+    # Create new project folder from the skeleton
     pip install cookiecutter
     cookiecutter https://github.com/brettlangdon/cookiecutter-flask-app.git
+    cd ./project_name
+
+    # Setup new virtualenv and install dependencies
+    mkvirtualenv project_name
+    pip install -r requirements.txt
+    npm install
+
+    # Start the server
+    python -m project_name runserver
+
+    # Or, start using project script
+    PYTHONPATH. ./bin/project_name runserver
