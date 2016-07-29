@@ -1,3 +1,4 @@
+blinker==1.4
 Flask==0.11.1
 # Waiting on next release for a fix for libsass
 -e git+https://github.com/miracle2k/flask-assets@36da5c90cf99293ac632cfab58db52cab1c8cc83#egg=flask_assets

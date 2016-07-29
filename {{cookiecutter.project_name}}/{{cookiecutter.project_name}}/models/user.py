@@ -1,8 +1,8 @@
 from flask_security import UserMixin
 from sqlalchemy.dialects.postgresql import UUID
 
-from . import Base
 from .. import db
+from . import Base
 from .user_role import user_role_map
 
 
@@ -12,5 +12,6 @@ class User(Base, db.Model, UserMixin):
     password = db.Column(db.String(255))
     active = db.Column(db.Boolean())
     confirmed_at = db.Column(db.DateTime())
+
     roles = db.relationship('Role', secondary=user_role_map,
                             backref=db.backref('users', lazy='dynamic'))
